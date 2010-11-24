@@ -34,8 +34,8 @@
 	background.image = [UIImage imageNamed:@"categories-screen-background.png"];
 	[self.view insertSubview:background atIndex:0 ];
 	
-	UIImageView *img = [[[UIImageView alloc] initWithFrame:CGRectMake(6, 8, 137, 32)] autorelease];
-	img.image = [UIImage imageNamed:@"ripcurl-phoneshop-logo-blue-wave-small.png"];
+	UIImageView *img = [[[UIImageView alloc] initWithFrame:CGRectMake(6, 20, 164, 30)] autorelease];
+	img.image = [UIImage imageNamed:@"blast-phoneshop-logo-blue-small.png"];
 	[background addSubview: img];
 	
 	img = [[[UIImageView alloc] initWithFrame:CGRectMake(216, 18, 17, 11)] autorelease];

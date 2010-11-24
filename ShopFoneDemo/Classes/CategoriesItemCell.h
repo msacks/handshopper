@@ -10,6 +10,7 @@
 
 
 @interface CategoriesItemCell : TTTableSubtitleItemCell {
+	UIImageView *_dottedPattern;
 	UIImageView *_whiteArrow;
 	UIImageView *_categoryIconCircle;
 	UIImageView *_categoryIcon;

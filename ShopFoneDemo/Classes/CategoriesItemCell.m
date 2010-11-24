@@ -8,12 +8,17 @@
 
 #import "CategoriesItemCell.h"
 
+#define kRowHeight 72
 
 @implementation CategoriesItemCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)identifier {
 	if (self = [super initWithStyle:style reuseIdentifier:identifier]) {
 
+		_dottedPattern = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, kRowHeight)] autorelease];
+		_dottedPattern.image = [UIImage imageNamed:@"dotted-pattern.png"];
+		[self addSubview: _dottedPattern];
+		
 		_whiteArrow = [[[UIImageView alloc] init] autorelease];
 		_whiteArrow.image = [UIImage imageNamed:@"small-white-arrow.png"];
 		_whiteArrow.alpha = 0.0;
@@ -61,7 +66,7 @@
 
 + (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object {
 	
-	return 72;  
+	return kRowHeight;  
 }
 
 - (void)layoutSubviews {
@@ -71,39 +76,46 @@
 	newFrame.size = CGSizeMake(156, 33);
 	self.imageView2.frame = newFrame;
 	if (self.selected) {
-		self.imageView2.center = CGPointMake(150, 72 / 2);
+		self.imageView2.center = CGPointMake(150, kRowHeight / 2);
 	} else {
-		self.imageView2.center = CGPointMake(110, 72 / 2);
+		self.imageView2.center = CGPointMake(110, kRowHeight / 2);
+	}
+
+	int row = [[_item.userInfo objectForKey:@"row"] intValue];
+	if (row % 2 == 0) {
+		_dottedPattern.alpha = 0.5;
+	} else {
+		_dottedPattern.alpha = 0.0;
 	}
 
 	newFrame.size = CGSizeMake(4, 10);
 	_whiteArrow.frame = newFrame;
-	_whiteArrow.center = CGPointMake(12, 72 / 2);
+	_whiteArrow.center = CGPointMake(12, kRowHeight / 2);
 
 	newFrame.size = CGSizeMake(40, 40);
 	_categoryIconCircle.frame = newFrame;
-	_categoryIconCircle.center = CGPointMake(36, 72 / 2);
+	_categoryIconCircle.center = CGPointMake(36, kRowHeight / 2);
 
 	newFrame.size = CGSizeMake(28, 28);
 	_categoryIcon.frame = newFrame;
-	_categoryIcon.center = CGPointMake(36, 72 / 2);
+	_categoryIcon.center = CGPointMake(36, kRowHeight / 2);
 	NSString *categoryImageName = [_item.userInfo objectForKey:@"categoryImageName"];
 	_categoryIcon.image = [UIImage imageNamed:categoryImageName];
 	
 	newFrame.size = CGSizeMake(20, 20);
 	_plusCircle.frame = newFrame;
-	_plusCircle.center = CGPointMake(62, (72 / 9) * 2);
+	_plusCircle.center = CGPointMake(62, (kRowHeight / 9) * 2);
 	
 	newFrame.size = CGSizeMake(10, 10);
 	_plusIcon.frame = newFrame;
-	_plusIcon.center = CGPointMake(62, (72 / 9) * 2);
+	_plusIcon.center = CGPointMake(62, (kRowHeight / 9) * 2);
 	
 	newFrame.size = CGSizeMake(40, 40);
 	_newIcon.frame = newFrame;
 	if (self.selected) {
-		_newIcon.center = CGPointMake(280, 72 / 2);
+		_newIcon.center = CGPointMake(280, kRowHeight / 2);
 	} else {
-		_newIcon.center = CGPointMake(240, 72 / 2);
+		_newIcon.center = CGPointMake(240, kRowHeight / 2);
 	}
 
 	BOOL isNewItem = [[_item.userInfo objectForKey:@"isNewItem"] boolValue];
@@ -111,15 +123,15 @@
 
 	newFrame.size = CGSizeMake(20, 20);
 	_blackCircle_small.frame = newFrame;
-	_blackCircle_small.center = CGPointMake(288, 72 / 2);
+	_blackCircle_small.center = CGPointMake(288, kRowHeight / 2);
 	
 	newFrame.size = CGSizeMake(10, 10);
 	_shirtIcon.frame = newFrame;
-	_shirtIcon.center = CGPointMake(288, 72 / 2);
+	_shirtIcon.center = CGPointMake(288, kRowHeight / 2);
 	
 	newFrame.size = CGSizeMake(4, 10);
 	_blackArrow.frame = newFrame;
-	_blackArrow.center = CGPointMake(304, 72 / 2);
+	_blackArrow.center = CGPointMake(304, kRowHeight / 2);
 
 	self.accessoryType = UITableViewCellAccessoryNone;
 }

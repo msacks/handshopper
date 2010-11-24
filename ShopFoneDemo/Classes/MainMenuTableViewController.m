@@ -34,16 +34,31 @@
 	background.image = [UIImage imageNamed:@"home-screen-background.png"];
 	[self.view insertSubview:background atIndex:0 ];
 	
-	UIImageView *img = [[[UIImageView alloc] initWithFrame:CGRectMake(16, 32, 296, 236)] autorelease];
-	img.image = [UIImage imageNamed:@"ripcurl-phoneshop-logo-main-menu.png"];
+	UIImageView *img = [[[UIImageView alloc] initWithFrame:CGRectMake(0, -20, 320, 61)] autorelease];
+	img.image = [UIImage imageNamed:@"dotted-pattern.png"];
+	img.alpha = 0.5;
 	[background addSubview: img];
 	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(204, 172, 49, 49)] autorelease];
+	img = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 120, 320, 61)] autorelease];
+	img.image = [UIImage imageNamed:@"dotted-pattern.png"];
+	img.alpha = 0.5;
+	[background addSubview: img];
+	
+	img = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 440, 320, 61)] autorelease];
+	img.image = [UIImage imageNamed:@"dotted-pattern.png"];
+	img.alpha = 0.5;
+	[background addSubview: img];
+	
+	img = [[[UIImageView alloc] initWithFrame:CGRectMake(-1, 30, 258, 199)] autorelease];
+	img.image = [UIImage imageNamed:@"blast-phoneshop-logo-main-menu.png"];
+	[background addSubview: img];
+	
+	img = [[[UIImageView alloc] initWithFrame:CGRectMake(219, 136, 49, 49)] autorelease];
 	img.image = [UIImage imageNamed:@"cog.png"];
 	img.alpha = 0.9;
 	[background addSubview: img];
 	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(218, 186, 21, 21)] autorelease];
+	img = [[[UIImageView alloc] initWithFrame:CGRectMake(233, 150, 21, 21)] autorelease];
 	img.image = [UIImage imageNamed:@"on-off-icon.png"];
 	[background addSubview: img];
 	

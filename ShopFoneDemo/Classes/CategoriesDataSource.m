@@ -17,27 +17,28 @@
 		self.sections = [NSArray arrayWithObject:@""];
 		self.items = [NSMutableArray array];
 		
+		int counter = 0;
 		NSMutableArray *menuItems = [NSMutableArray array];
 		CategoriesItem *item;
 		
 		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://surfboards-menu-item.png" URL:@"tt://item?category=surfboards"];
-		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", nil];
+		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
 		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://clothing-menu-item.png" URL:@"tt://item?category=clothing"];
-		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", nil];
+		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
 		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://wetsuits-menu-item.png" URL:@"tt://item?category=wetsuits"];
-		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", nil];
+		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
 		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://swimwear-menu-item.png" URL:@"tt://item?category=swimwear"];
-		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", [NSNumber numberWithBool:YES], @"isNewItem", nil];
+		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", [NSNumber numberWithBool:YES], @"isNewItem", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
 		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://footwear-menu-item.png" URL:@"tt://item?category=footwear"];
-		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", nil];
+		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
 		[self.items addObject:menuItems];
