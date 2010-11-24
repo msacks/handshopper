@@ -23,7 +23,6 @@
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		9D186A5B1299CF0B00D02871 /* MainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D186A5A1299CF0B00D02871 /* MainMenuTableViewController.m */; };
 		9D186A851299F56900D02871 /* home-screen-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D186A841299F56900D02871 /* home-screen-background.png */; };
-		9D186A9A1299F74F00D02871 /* ripcurl-phoneshop-logo-main-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D186A991299F74F00D02871 /* ripcurl-phoneshop-logo-main-menu.png */; };
 		9D186AAA1299FA2900D02871 /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D186AA91299FA2900D02871 /* cog.png */; };
 		9D186ABC1299FBDC00D02871 /* on-off-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D186ABB1299FBDC00D02871 /* on-off-icon.png */; };
 		9D186ACD1299FF3800D02871 /* MainMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D186ACC1299FF3800D02871 /* MainMenuDataSource.m */; };
@@ -57,7 +56,8 @@
 		9D18735F129B146D00D02871 /* no-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D187358129B146D00D02871 /* no-icon.png */; };
 		9D187360129B146D00D02871 /* sound-icon-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D187359129B146D00D02871 /* sound-icon-on.png */; };
 		9D187361129B146D00D02871 /* sound-icon-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D18735A129B146D00D02871 /* sound-icon-off.png */; };
-		9D187362129B146D00D02871 /* ripcurl-phoneshop-logo-blue-wave-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D18735B129B146D00D02871 /* ripcurl-phoneshop-logo-blue-wave-small.png */; };
+		9DBCB8EF129C82A9008FC8BC /* blast-phoneshop-logo-main-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCB8EE129C82A9008FC8BC /* blast-phoneshop-logo-main-menu.png */; };
+		9DBCB8F1129C8646008FC8BC /* blast-phoneshop-logo-blue-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCB8F0129C8646008FC8BC /* blast-phoneshop-logo-blue-small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,7 +428,6 @@
 		9D186A591299CF0B00D02871 /* MainMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuTableViewController.h; sourceTree = "<group>"; };
 		9D186A5A1299CF0B00D02871 /* MainMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuTableViewController.m; sourceTree = "<group>"; };
 		9D186A841299F56900D02871 /* home-screen-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-screen-background.png"; sourceTree = "<group>"; };
-		9D186A991299F74F00D02871 /* ripcurl-phoneshop-logo-main-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ripcurl-phoneshop-logo-main-menu.png"; sourceTree = "<group>"; };
 		9D186AA91299FA2900D02871 /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
 		9D186ABB1299FBDC00D02871 /* on-off-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "on-off-icon.png"; sourceTree = "<group>"; };
 		9D186ACB1299FF3800D02871 /* MainMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuDataSource.h; sourceTree = "<group>"; };
@@ -469,7 +468,8 @@
 		9D187358129B146D00D02871 /* no-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-icon.png"; sourceTree = "<group>"; };
 		9D187359129B146D00D02871 /* sound-icon-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-icon-on.png"; sourceTree = "<group>"; };
 		9D18735A129B146D00D02871 /* sound-icon-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-icon-off.png"; sourceTree = "<group>"; };
-		9D18735B129B146D00D02871 /* ripcurl-phoneshop-logo-blue-wave-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ripcurl-phoneshop-logo-blue-wave-small.png"; sourceTree = "<group>"; };
+		9DBCB8EE129C82A9008FC8BC /* blast-phoneshop-logo-main-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blast-phoneshop-logo-main-menu.png"; sourceTree = "<group>"; };
+		9DBCB8F0129C8646008FC8BC /* blast-phoneshop-logo-blue-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blast-phoneshop-logo-blue-small.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,8 +497,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9D1872ED129A839100D02871 /* MainMenu */,
-				9D1872EC129A837800D02871 /* Categories */,
+				9DBCB8DD129C808B008FC8BC /* Categories */,
+				9DBCB8DC129C807D008FC8BC /* MainMenu */,
 				1D3623240D0F684500981E51 /* ShopFoneDemoAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ShopFoneDemoAppDelegate.m */,
 			);
@@ -537,13 +537,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DBCB8F0129C8646008FC8BC /* blast-phoneshop-logo-blue-small.png */,
+				9DBCB8EE129C82A9008FC8BC /* blast-phoneshop-logo-main-menu.png */,
 				9D187355129B146D00D02871 /* dotted-pattern.png */,
 				9D187356129B146D00D02871 /* shirt-icon.png */,
 				9D187357129B146D00D02871 /* home-icon.png */,
 				9D187358129B146D00D02871 /* no-icon.png */,
 				9D187359129B146D00D02871 /* sound-icon-on.png */,
 				9D18735A129B146D00D02871 /* sound-icon-off.png */,
-				9D18735B129B146D00D02871 /* ripcurl-phoneshop-logo-blue-wave-small.png */,
 				9D18734D129B124000D02871 /* large-surfboard-icon.png */,
 				9D18734E129B124000D02871 /* large-swimtrunks-icon.png */,
 				9D187302129ADF6100D02871 /* footwear-menu-item.png */,
@@ -564,7 +565,6 @@
 				9D186ACF129A011C00D02871 /* guys-menu-item.png */,
 				9D186ABB1299FBDC00D02871 /* on-off-icon.png */,
 				9D186AA91299FA2900D02871 /* cog.png */,
-				9D186A991299F74F00D02871 /* ripcurl-phoneshop-logo-main-menu.png */,
 				9D186A841299F56900D02871 /* home-screen-background.png */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				8D1107310486CEB800E47090 /* ShopFoneDemo-Info.plist */,
@@ -681,22 +681,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9D1872EC129A837800D02871 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				9D1872E5129A837100D02871 /* CategoriesItemCell.m */,
-				9D1872E6129A837100D02871 /* CategoriesItemCell.h */,
-				9D1872E7129A837100D02871 /* CategoriesItem.m */,
-				9D1872E8129A837100D02871 /* CategoriesItem.h */,
-				9D1872E2129A817800D02871 /* CategoriesDataSource.m */,
-				9D1872E3129A817800D02871 /* CategoriesDataSource.h */,
-				9D1872D9129A7DF300D02871 /* CategoriesTableViewController.m */,
-				9D1872DA129A7DF300D02871 /* CategoriesTableViewController.h */,
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		9D1872ED129A839100D02871 /* MainMenu */ = {
+		9DBCB8DC129C807D008FC8BC /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
 				9D186A591299CF0B00D02871 /* MainMenuTableViewController.h */,
@@ -709,6 +694,21 @@
 				9D1871BC129A41E300D02871 /* MainMenuItemCell.m */,
 			);
 			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		9DBCB8DD129C808B008FC8BC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9D1872E5129A837100D02871 /* CategoriesItemCell.m */,
+				9D1872E6129A837100D02871 /* CategoriesItemCell.h */,
+				9D1872E7129A837100D02871 /* CategoriesItem.m */,
+				9D1872E8129A837100D02871 /* CategoriesItem.h */,
+				9D1872E2129A817800D02871 /* CategoriesDataSource.m */,
+				9D1872E3129A817800D02871 /* CategoriesDataSource.h */,
+				9D1872D9129A7DF300D02871 /* CategoriesTableViewController.m */,
+				9D1872DA129A7DF300D02871 /* CategoriesTableViewController.h */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1096,7 +1096,6 @@
 			files = (
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				9D186A851299F56900D02871 /* home-screen-background.png in Resources */,
-				9D186A9A1299F74F00D02871 /* ripcurl-phoneshop-logo-main-menu.png in Resources */,
 				9D186AAA1299FA2900D02871 /* cog.png in Resources */,
 				9D186ABC1299FBDC00D02871 /* on-off-icon.png in Resources */,
 				9D186AD0129A011C00D02871 /* girls-menu-item.png in Resources */,
@@ -1123,7 +1122,8 @@
 				9D18735F129B146D00D02871 /* no-icon.png in Resources */,
 				9D187360129B146D00D02871 /* sound-icon-on.png in Resources */,
 				9D187361129B146D00D02871 /* sound-icon-off.png in Resources */,
-				9D187362129B146D00D02871 /* ripcurl-phoneshop-logo-blue-wave-small.png in Resources */,
+				9DBCB8EF129C82A9008FC8BC /* blast-phoneshop-logo-main-menu.png in Resources */,
+				9DBCB8F1129C8646008FC8BC /* blast-phoneshop-logo-blue-small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1258,7 +1258,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
