@@ -12,10 +12,35 @@
 
 #import "MainMenuTableViewController.h"
 #import "CategoriesTableViewController.h"
+#import "ItemListTableViewController.h"
+#import "ItemDetailTableViewController.h"
+
+@interface NotImplementedTableViewController : TTModelViewController
+
+@end
+
+@implementation NotImplementedTableViewController
+
+@end
 
 @implementation ShopFoneDemoAppDelegate
 
 @synthesize window;
+
+- (UIViewController *) tabs {
+	if (!_tabbar) {
+		_tabbar = [[UITabBarController alloc] initWithNibName:nil bundle:nil];	
+		[_tabbar setTabURLs:[NSArray arrayWithObjects:@"tt://catalog", 
+			@"tt://account", 
+			@"tt://search", 
+			@"tt://stores", 
+			nil]];
+		_tabbar.selectedIndex = 1;				
+		_tabbar.customizableViewControllers = nil;
+	}
+	
+	return _tabbar;
+}
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -25,10 +50,35 @@
 	TTNavigator* navigator = [TTNavigator navigator];
 	
 	TTURLMap *map = navigator.URLMap;
-	[map from:@"tt://main-menu/" toViewController:[MainMenuTableViewController class]];
-	[map from:@"tt://catalog/" toViewController:[CategoriesTableViewController class]];
+	[map from:@"tt://tabs" toViewController:self selector:@selector(tabs)];	
+	
+	[map from:@"tt://catalog/" toSharedViewController:[MainMenuTableViewController class]];
+	[map from:@"tt://account/" toSharedViewController:[NotImplementedTableViewController class]];
+	[map from:@"tt://search/" toSharedViewController:[NotImplementedTableViewController class]];
+	[map from:@"tt://stores/" toSharedViewController:[NotImplementedTableViewController class]];
+
+	//// set up tab bar
+	UIViewController* controller;
+	controller = [[TTNavigator navigator] viewControllerForURL:@"tt://catalog"];
+	controller.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Store" image:[UIImage imageNamed:@"store-tab-bar-icon.png"] tag:0] autorelease];
     
-    [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://main-menu"]];
+	controller = [[TTNavigator navigator] viewControllerForURL:@"tt://account"];
+	controller.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"My Account" image:[UIImage imageNamed:@"account-tab-bar-icon.png"] tag:1] autorelease];
+    
+	controller = [[TTNavigator navigator] viewControllerForURL:@"tt://search"];
+	controller.tabBarItem = [[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:2] autorelease];
+    
+	controller = [[TTNavigator navigator] viewControllerForURL:@"tt://stores"];
+	controller.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Stores" image:[UIImage imageNamed:@"store-locator-tab-bar-icon.png"] tag:3] autorelease];
+    
+	[map from:@"tt://categories/" toViewController:[CategoriesTableViewController class]];
+	[map from:@"tt://items/" toViewController:[ItemListTableViewController class]];
+	[map from:@"tt://item/" toViewController:[ItemDetailTableViewController class]];
+	[map from:@"tt://check-out/" toViewController:[NotImplementedTableViewController class]];
+
+	UIViewController *vc = [self tabs];
+	[navigator.window addSubview:[vc view]];
+	[[TTNavigator navigator] openURLs:@"tt://tabs", @"tt://catalog", nil];
 
     return YES;
 }

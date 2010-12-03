@@ -11,6 +11,13 @@
 
 @implementation CategoriesTableViewController
 
+- (id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {	
+	if (self = [super initWithNavigatorURL:URL query:query]) {
+		_gender =  [[query objectForKey:@"gender"] retain];
+	}
+	return self;
+}
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -21,66 +28,27 @@
 }
 */
 
-/*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-}
-*/
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
+    [super loadView];
+	
+	NSString *backgroundFilename = [NSString stringWithFormat:@"%@-categories-screen-background.png", _gender];
 	
 	UIImageView *background = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
-	background.image = [UIImage imageNamed:@"categories-screen-background.png"];
+	background.image = [UIImage imageNamed:backgroundFilename];
 	[self.view insertSubview:background atIndex:0 ];
-	
-	UIImageView *img = [[[UIImageView alloc] initWithFrame:CGRectMake(6, 20, 164, 30)] autorelease];
-	img.image = [UIImage imageNamed:@"blast-phoneshop-logo-blue-small.png"];
-	[background addSubview: img];
-	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(216, 18, 17, 11)] autorelease];
-	img.image = [UIImage imageNamed:@"sound-icon-off.png"];
-	[background addSubview: img];
-	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(236, 8, 32, 32)] autorelease];
-	img.image = [UIImage imageNamed:@"black-circle.png"];
-	[background addSubview: img];
-	
-	UIButton *homeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	homeButton.frame = CGRectMake(238, 8, 30, 30);
-	[homeButton setImage:[UIImage imageNamed:@"home-icon.png"] forState:UIControlStateNormal];
-	[homeButton addTarget:self action:@selector(goToMainMenu) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview: homeButton];
-	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(268, 4, 40, 40)] autorelease];
-	img.image = [UIImage imageNamed:@"black-circle.png"];
-	[background addSubview: img];
-	
-	img = [[[UIImageView alloc] initWithFrame:CGRectMake(279, 14, 19, 19)] autorelease];
-	img.image = [UIImage imageNamed:@"no-icon.png"];
-	[background addSubview: img];
 	
 	self.tableView.backgroundColor = [UIColor clearColor];
 	self.tableView.separatorColor = [UIColor clearColor];
-	CGRect newFrame = self.tableView.frame;
-	newFrame.origin.y = 70;
-	newFrame.size.height -= 90;
-	self.tableView.frame = newFrame;
+	self.tableView.frame = CGRectMake(0, 0, 320, 440);
 	self.variableHeightRows = YES;
 	
-	[self.navigationController setNavigationBarHidden:YES];
-	
-	self.dataSource = [[[CategoriesDataSource alloc] init] autorelease];
-}
-
-- (void)goToMainMenu {
-	[self.navigationController popViewControllerAnimated:YES];
+	self.dataSource = [[[CategoriesDataSource alloc] initWithGender:_gender] autorelease];
 }
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
 }
 */
 
@@ -99,14 +67,16 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+/*
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
+*/
 
 - (void)dealloc {
+	[_gender release];
     [super dealloc];
 }
 

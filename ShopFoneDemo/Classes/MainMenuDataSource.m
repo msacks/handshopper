@@ -20,10 +20,10 @@
 		NSMutableArray *menuItems = [NSMutableArray array];
 		MainMenuItem *item;
 		
-		item = [MainMenuItem itemWithText:nil subtitle:nil imageURL:@"bundle://guys-menu-item.png" URL:@"tt://catalog?gender=guys"];
+		item = [MainMenuItem itemWithText:nil subtitle:nil imageURL:@"bundle://guys-menu-item.png" URL:@"tt://categories?gender=guys"];
 		[menuItems addObject:item];
 		
-		item = [MainMenuItem itemWithText:nil subtitle:nil imageURL:@"bundle://girls-menu-item.png" URL:@"tt://catalog?gender=girls"];
+		item = [MainMenuItem itemWithText:nil subtitle:nil imageURL:@"bundle://girls-menu-item.png" URL:@"tt://categories?gender=girls"];
 		[menuItems addObject:item];
 		
 		[self.items addObject:menuItems];

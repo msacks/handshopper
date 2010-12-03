@@ -7,9 +7,10 @@
 //
 
 #import "Three20/Three20.h"
+#import "BaseTableViewController.h"
 
-
-@interface CategoriesTableViewController : TTTableViewController {
+@interface CategoriesTableViewController : BaseTableViewController {
+	NSString *_gender;
 }
 
 @end

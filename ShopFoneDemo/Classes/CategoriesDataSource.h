@@ -10,7 +10,9 @@
 
 
 @interface CategoriesDataSource : TTSectionedDataSource {
-
+	NSString *_gender;
 }
+
+- (id)initWithGender:(NSString *)gender;
 
 @end

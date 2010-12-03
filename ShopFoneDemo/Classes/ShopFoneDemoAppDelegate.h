@@ -10,6 +10,7 @@
 
 @interface ShopFoneDemoAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	UITabBarController *_tabbar;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

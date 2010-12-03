@@ -149,7 +149,7 @@
 		_blackArrow.alpha = 1.0;
 		_blackCircle_small.alpha = 0.0;
 		_shirtIcon.alpha = 0.0;
-		self.backgroundColor = RGBACOLOR(242, 210, 0, 0.5);
+		self.backgroundColor = [_item.userInfo objectForKey:@"selectedBackgroundColor"];
 	} else {
 		_whiteArrow.alpha = 0.0;
 		_categoryIconCircle.alpha = 0.0;
