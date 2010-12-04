@@ -33,7 +33,6 @@
 		_blackArrow.alpha = 0.0;
 		[self addSubview:_blackArrow];
 		
-		self.textLabel.textColor = [UIColor whiteColor];
 		self.subtitleLabel.textColor = self.textLabel.textColor;
 	}
 	return self;
@@ -61,9 +60,9 @@
 	_whiteArrow.frame = newFrame;
 	_whiteArrow.center = CGPointMake(12, kRowHeight / 2);
 
-	newFrame.size = CGSizeMake(40, 40);
+	newFrame.size = CGSizeMake(32, 32);
 	_newIcon.frame = newFrame;
-	_newIcon.center = CGPointMake(240, kRowHeight / 2);
+	_newIcon.center = CGPointMake(66, (kRowHeight / 5) * 4);
 
 	BOOL isNewItem = [[_item.userInfo objectForKey:@"isNewItem"] boolValue];
 	_newIcon.alpha = isNewItem ? 1.0 : 0.0;

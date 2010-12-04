@@ -14,6 +14,8 @@
 #import "CategoriesTableViewController.h"
 #import "ItemListTableViewController.h"
 #import "ItemDetailTableViewController.h"
+#import "ItemDetailImageViewer.h"
+#import "CheckoutViewController.h"
 
 @interface NotImplementedTableViewController : TTModelViewController
 
@@ -45,8 +47,15 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+void myExceptionHandler(NSException *exception) {
+    NSArray *stack = [exception callStackReturnAddresses];
+    NSLog(@"%@", stack);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
+
+    NSSetUncaughtExceptionHandler(&myExceptionHandler);
+
 	TTNavigator* navigator = [TTNavigator navigator];
 	
 	TTURLMap *map = navigator.URLMap;
@@ -74,7 +83,9 @@
 	[map from:@"tt://categories/" toViewController:[CategoriesTableViewController class]];
 	[map from:@"tt://items/" toViewController:[ItemListTableViewController class]];
 	[map from:@"tt://item/" toViewController:[ItemDetailTableViewController class]];
-	[map from:@"tt://check-out/" toViewController:[NotImplementedTableViewController class]];
+	[map from:@"tt://item/#(lightboxInStep1)" toViewController:[ItemDetailTableViewController class]];
+	[map from:@"tt://zoom/" toViewController:[ItemDetailImageViewer class]];
+	[map from:@"tt://check-out/" toViewController:[CheckoutViewController class]];
 
 	UIViewController *vc = [self tabs];
 	[navigator.window addSubview:[vc view]];

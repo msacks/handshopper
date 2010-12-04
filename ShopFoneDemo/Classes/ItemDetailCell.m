@@ -9,6 +9,8 @@
 #import "ItemDetailCell.h"
 #import "Three20UI/Three20UI+Additions.h"
 
+#import "ItemDetailImageViewer.h"
+
 @interface Stylesheet : NSObject
 
 @end
@@ -27,7 +29,7 @@
 	return [UIFont fontWithName:@"Helvetica" size:kSubtitleLabelFontSize];
 }
 
-#define kPriceLabelFontSize 36
+#define kPriceLabelFontSize 28
 + (UIFont *)priceLabelFont {
 	return [UIFont fontWithName:@"Verdana" size:kPriceLabelFontSize];
 }
@@ -66,23 +68,23 @@
 		_smallBlackArrow.image = [UIImage imageNamed:@"small-right-arrow.png"];
 		[self addSubview:_smallBlackArrow];
 		
-		_saleIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(96, 184, 32, 32)] autorelease];
+		_saleIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(86, 184, 32, 32)] autorelease];
 		_saleIcon.image = [UIImage imageNamed:@"sale-icon.png"];
 		[self addSubview:_saleIcon];
 		
-		_calculatorIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(132, 100, 24, 24)] autorelease];
+		_calculatorIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(122, 100, 24, 24)] autorelease];
 		_calculatorIcon.image = [UIImage imageNamed:@"calculator-icon.png"];
 		[self addSubview:_calculatorIcon];
 
-		_sizeQuantityLabel = [[[UIImageView alloc] initWithFrame:CGRectMake(160, 100, 54, 32)] autorelease];
+		_sizeQuantityLabel = [[[UIImageView alloc] initWithFrame:CGRectMake(150, 100, 54, 32)] autorelease];
 		_sizeQuantityLabel.image = [UIImage imageNamed:@"size-quantity-label.png"];
 		[self addSubview:_sizeQuantityLabel];
 		
-		_dollarIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(220, 100, 32, 32)] autorelease];
+		_dollarIcon = [[[UIImageView alloc] initWithFrame:CGRectMake(210, 100, 32, 32)] autorelease];
 		_dollarIcon.image = [UIImage imageNamed:@"dollar-icon.png"];
 		[self addSubview:_dollarIcon];
 		
-		_priceLabel = [[[UILabel alloc] initWithFrame:CGRectMake(250, 100, 80, 60)] autorelease];
+		_priceLabel = [[[UILabel alloc] initWithFrame:CGRectMake(240, 100, 84, 60)] autorelease];
 		_priceLabel.font = [Stylesheet priceLabelFont];
 		_priceLabel.minimumFontSize = kPriceLabelFontSize;
 		_priceLabel.backgroundColor = [UIColor clearColor];
@@ -119,7 +121,7 @@
 }
 
 - (void)zoomItemImage {
-	TTOpenURL(@"tt://zoom");
+	TTOpenURL([NSString stringWithFormat:@"#%@", ((TTTableSubtitleItem *)_item).imageURL]);
 }
 
 - (void)goToCheckOut {
@@ -128,29 +130,37 @@
 
 + (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object {
 	int rowHeight = 30; // top dotted pattern height
+	int rowHeight2 = rowHeight;
 	UIFont *font = [Stylesheet textLabelFont];
 	CGSize size = [((TTTableSubtitleItem *)object).text sizeWithFont:font
 								  constrainedToSize:CGSizeMake(200, font.lineHeight * kTextLabelLines) lineBreakMode:UILineBreakModeWordWrap];
-	rowHeight += size.height;
+	rowHeight2 += size.height;
 	
 	font = [Stylesheet subtitleLabelFont];
 	size = [((TTTableSubtitleItem *)object).subtitle sizeWithFont:font
 								   constrainedToSize:CGSizeMake(180, font.lineHeight * kSubtitleLabelLines) lineBreakMode:UILineBreakModeWordWrap];
-	rowHeight += size.height;
+	rowHeight2 += size.height;
 	
-	rowHeight += 32; // size quantity label
+	rowHeight2 += 32; // size quantity label
+	
+	rowHeight2 += 32; // misc padding
+
+#define kImageHeight 156
+	if (rowHeight2 > rowHeight + kImageHeight) {
+		rowHeight = rowHeight2;
+	} else {
+		rowHeight += kImageHeight + 6;
+	}
 	
 	rowHeight += 61; // bottom dotted pattern
 	
-	rowHeight += 32; // misc padding
-
 	return rowHeight;  
 }
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	
-	self.imageView2.frame = CGRectMake(10, 30, 106, 186);
+	self.imageView2.frame = CGRectMake(10, 30, 106, kImageHeight);
 
 	self.backgroundColor = RGBACOLOR(190, 211, 232, 0.75);
 

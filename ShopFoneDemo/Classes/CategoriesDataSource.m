@@ -33,19 +33,19 @@
 		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", selectedBackgroundColor, @"selectedBackgroundColor", nil];
 		[menuItems addObject:item];
 		
-		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://clothing-menu-item.png" URL:@"tt://items?category=clothing"];
+		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://clothing-menu-item.png" URL:[NSString stringWithFormat:@"tt://items?category=%@-clothing", gender]];
 		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", selectedBackgroundColor, @"selectedBackgroundColor", nil];
 		[menuItems addObject:item];
 		
-		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://wetsuits-menu-item.png" URL:@"tt://items?category=wetsuits"];
+		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://wetsuits-menu-item.png" URL:[NSString stringWithFormat:@"tt://items?category=%@-wetsuits", gender]];
 		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", nil];
 		[menuItems addObject:item];
 		
-		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://swimwear-menu-item.png" URL:@"tt://items?category=swimwear"];
+		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://swimwear-menu-item.png" URL:[NSString stringWithFormat:@"tt://items?category=%@-swimwear", gender]];
 		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-swimtrunks-icon.png",@"categoryImageName", [NSNumber numberWithBool:YES], @"isNewItem", [NSNumber numberWithInt:counter++], @"row", selectedBackgroundColor, @"selectedBackgroundColor", nil];
 		[menuItems addObject:item];
 		
-		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://footwear-menu-item.png" URL:@"tt://items?category=footwear"];
+		item = [CategoriesItem itemWithText:nil subtitle:nil imageURL:@"bundle://footwear-menu-item.png" URL:[NSString stringWithFormat:@"tt://items?category=%@-footwear", gender]];
 		item.userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"large-surfboard-icon.png",@"categoryImageName", [NSNumber numberWithInt:counter++], @"row", selectedBackgroundColor, @"selectedBackgroundColor", nil];
 		[menuItems addObject:item];
 		
