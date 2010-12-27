@@ -77,8 +77,8 @@
 	[_itemId release];
 	[_zoomImageURL release];
 	//[_viewer release]; // don't; crash ;-)
-	//[_photo release];
-	//[_photoSource release];
+	[_photo release];
+	[_photoSource release];
 	//[_closeButton release]; // don't; it's autoreleased
 	[_lightbox release];
 	[_lightboxBackground release];
@@ -158,6 +158,7 @@
 	[UIView commitAnimations];
 
 	[_closeButton removeFromSuperview];
+	_closeButton = nil;
 
 	[UIApplication sharedApplication].statusBarHidden = NO;
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
@@ -169,12 +170,22 @@
 	[_lightboxBackground removeFromSuperview];
 
 	[_zoomImageURL release];
+	_zoomImageURL = nil;
+
 	//[_viewer release]; // don't; crash ;-)
-	//[_photo release];
-	//[_photoSource release];
+	
+	_photo.photoSource = nil;
+	_photoSource.image = nil;
+	[_photo release];
+	_photo = nil;
+	[_photoSource release];
+	_photoSource = nil;
+
 	//[_closeButton release]; // don't; it's autoreleased
 	[_lightbox release];
+	_lightbox = nil;
 	[_lightboxBackground release];
+	_lightboxBackground = nil;
 }
 
 @end

@@ -16,6 +16,7 @@
 	NSString *_zoomImageURL;
 	ItemDetailImage *_photo;
 	ItemDetailImagePhotoSource *_photoSource;
+	TTScrollView *_scrollView;
 	UIView *_lightboxBackground;
 	UIView *_lightbox;
 	ItemDetailImageViewer *_viewer;
