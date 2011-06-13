@@ -1,1 +1,20 @@
+HandShopper
+HandShopper is a mobile eCommerce platform which is designed for working with a back-end  CMS for management of product inventory. HandSHopper intends to make mobile eCommerce easier for retail businesses to publish their own custom app shops. 
+
+
+System Requirements:
+- iOS 4.1+
+
+
+TODO:
+- Include back-end CMS
+- Sync client with back-end CMS
+
+
 To build the prototype, you need to pull both folders in this repository.
+
+Design, Concept & Architecture by Matthew Sacks matthew@glasscodeinc.com
+Application Development by PJ Cabrera pj.cabrerar@gmail.com
+
+contributors and bug reports:
+github.com/glasscode/handshopper
